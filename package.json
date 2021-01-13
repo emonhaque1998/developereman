@@ -1,0 +1,27 @@
+{
+  "name": "developereman",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emonhaque1998/developereman.git"
+  },
+  "keywords": [
+    "developereman"
+  ],
+  "author": "Eman Haque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emonhaque1998/developereman/issues"
+  },
+  "homepage": "https://github.com/emonhaque1998/developereman#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
