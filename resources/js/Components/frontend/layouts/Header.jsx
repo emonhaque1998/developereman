@@ -1,9 +1,15 @@
 import { useState, useRef } from "react";
 import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { Link } from "@inertiajs/react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Headers() {
     const [showMenu, setShowMenu] = useState(false);
+
+    const showMenuHandler = (e) => {
+        setShowMenu(!showMenu);
+    };
+
     return (
         <div className="container mx-auto">
             <div className="flex bg-transparent items-center border-b border-cyan-300 py-6 px-3 md:px-0 lg:px-0">
@@ -73,9 +79,60 @@ export default function Headers() {
                                 </div>
                             </a>
                         </div>
+                        <div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                onClick={showMenuHandler}
+                                className="w-6 h-6 text-white lg:hidden"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                                />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
+            <AnimatePresence>
+                {showMenu && (
+                    <motion.div
+                        className="w-1/3 p-5 h-screen fixed bg-slate-500 top-0 right-0 flex flex-col"
+                        initial={{ x: "100vw" }} // Initial position outside the screen on the right
+                        animate={{ x: 0 }} // Final position at 0 (coming in from the right)
+                        exit={{ x: "100vw" }} // Exit position to the right
+                        transition={{ duration: 1 }} // Duration of the animation
+                        style={{
+                            cursor: "pointer", // Add cursor pointer for click
+                        }}
+                    >
+                        <Link href="/" className="justify-center">
+                            <h1 className="text-white text-sm lg:text-lg flex flex-col md:flex-row">
+                                <span className="text-cyan-300 font-extrabold">
+                                    &lt;C /&gt;
+                                </span>
+                                <span className="font-extrabold">
+                                    DeveloperEman
+                                </span>
+                            </h1>
+                        </Link>
+                        <ul className="text-md font-bold flex flex-col gap-3 items-center mt-5">
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+
+                            <li>
+                                <a href="">Home</a>
+                            </li>
+                        </ul>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
