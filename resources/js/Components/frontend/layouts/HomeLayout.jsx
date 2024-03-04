@@ -9,7 +9,7 @@ export default function HomeLayout({ children }) {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <div className="developer-background h-screen">{children}</div>
+                <div className="developer-background">{children}</div>
             </motion.div>
         </>
     );

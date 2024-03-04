@@ -1,3 +1,4 @@
+import Hero from "@/Components/frontend/hero/Hero";
 import Header from "@/Components/frontend/layouts/Header";
 import HomeLayout from "@/Components/frontend/layouts/HomeLayout";
 import { Link, Head } from "@inertiajs/react";
@@ -8,6 +9,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <Head title="Welcome" />
             <HomeLayout>
                 <Header />
+                <Hero />
             </HomeLayout>
 
             {/* <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">

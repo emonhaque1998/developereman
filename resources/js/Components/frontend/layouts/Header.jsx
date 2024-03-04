@@ -6,13 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Headers() {
     const [showMenu, setShowMenu] = useState(false);
 
+    const isActive = window.location.pathname;
+
     const showMenuHandler = (e) => {
         setShowMenu(!showMenu);
     };
 
     return (
         <div className="container mx-auto">
-            <div className="flex bg-transparent items-center border-b border-cyan-300 py-6 px-3 md:px-0 lg:px-0">
+            <div className="flex bg-transparent items-center border-b border-gray-400/10 py-6 px-3 md:px-0 lg:px-0">
                 <div className="flex-1">
                     <Link href="/">
                         <h1 className="text-white text-sm lg:text-lg flex flex-col md:flex-row">
@@ -28,18 +30,35 @@ export default function Headers() {
                 <div className="flex-1">
                     <div className="flex items-center gap-3 lg:gap-10">
                         <ul className="hidden lg:flex gap-3 flex-auto text-gray-300 font-medium justify-end">
-                            <li className="hover:text-cyan-300 hover:font-semibold">
-                                <a href="">Home</a>
+                            <li
+                                className={`hover:text-cyan-300 ${
+                                    isActive === "/" ? "text-cyan-300" : null
+                                }`}
+                            >
+                                <Link href="/" className="">
+                                    Home
+                                </Link>
+                            </li>
+                            <li
+                                className={`hover:text-cyan-300 ${
+                                    isActive === "/about"
+                                        ? "text-cyan-300"
+                                        : null
+                                }`}
+                            >
+                                <Link href="/about" className="">
+                                    About
+                                </Link>
                             </li>
                         </ul>
                         <div className="flex-auto hidden lg:block">
                             <div className="relative">
                                 <input
                                     type="text"
-                                    className="border border-gray-300 rounded-md pl-4 pr-10 py-2 focus:outline-none focus:border-cyan-300"
+                                    className="border border-gray-300 rounded-2xl pl-4 pr-10 py-1 focus:outline-none focus:border-cyan-300"
                                     placeholder="Search"
                                 />
-                                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <div className="absolute inset-y-0 right-5 flex items-center pr-3 pointer-events-none">
                                     <svg
                                         className="h-5 w-5 text-gray-400"
                                         fill="none"
@@ -79,7 +98,7 @@ export default function Headers() {
                                 </div>
                             </a>
                         </div>
-                        <div>
+                        <div className="flex-1 flex lg:hidden justify-end">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -87,7 +106,7 @@ export default function Headers() {
                                 strokeWidth={1.5}
                                 stroke="currentColor"
                                 onClick={showMenuHandler}
-                                className="w-6 h-6 text-white lg:hidden"
+                                className="w-6 h-6 text-white"
                             >
                                 <path
                                     strokeLinecap="round"

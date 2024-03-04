@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Madimi+One&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .developer-background {
     background-color: #292f36;
+}
+
+.big-corner {
+    border-top-left-radius: 120px;
+    border-bottom-right-radius: 120px;
 }
