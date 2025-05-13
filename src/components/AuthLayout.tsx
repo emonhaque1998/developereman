@@ -13,7 +13,6 @@ import { useAuth } from "@clerk/nextjs";
 
 export default function AuthLayout() {
   const { userId } = useAuth();
-  console.log(userId)
 
   useEffect(() => {
     const createOrFetchUser = async () => {
@@ -22,8 +21,6 @@ export default function AuthLayout() {
           const response = await axios.post("/api/auth", {
             userId: userId,
           });
-
-          console.log("User created or fetched:", response.data);
         } catch (error) {
           console.error("Error creating/fetching user:", error);
         }
