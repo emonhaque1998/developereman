@@ -13,6 +13,7 @@ import { useAuth } from "@clerk/nextjs";
 
 export default function AuthLayout() {
   const { userId } = useAuth();
+  console.log(userId)
 
   useEffect(() => {
     const createOrFetchUser = async () => {

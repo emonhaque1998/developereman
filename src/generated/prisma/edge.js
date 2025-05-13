@@ -131,7 +131,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/eman/Development/developereman/src/generated/prisma",
+      "value": "/home/skilldevelopment/Development/developereman/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -140,12 +140,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "rhel-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/eman/Development/developereman/prisma/schema.prisma",
+    "sourceFilePath": "/home/skilldevelopment/Development/developereman/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
