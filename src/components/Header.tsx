@@ -4,12 +4,9 @@ import Image from "next/image";
 import AuthLayout from "./AuthLayout";
 import { ModeToggle } from "./ModeToggole";
 import { NavigationMenuItems } from "./NavigationMenuItems";
-import { useTheme } from "next-themes";
 import { MdOutlineMenu } from "react-icons/md";
 
-export default function Header() {
-  const { theme, setTheme } = useTheme();
-  console.log(theme);
+export default function Header() {  
   return (
     <header
       className={`shadow-md outline outline-black/5 py-2 bg-white dark:bg-black dark:outline-white/5`}
