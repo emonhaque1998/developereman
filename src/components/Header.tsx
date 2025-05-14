@@ -13,12 +13,14 @@ export default function Header() {
 
   return (
     <header
-      className={`shadow-md outline outline-black/5 py-2 bg-white dark:bg-black dark:outline-white/5`}
+      className={`z-10 outline outline-black/5 py-2 bg-white/10 container mx-auto absolute top-14 left-1/2 transform -translate-x-1/2 -translate-y-1/2 dark:bg-black/10 backdrop-blur-md border border-white/30 shadow-xl rounded-xl p-8 text-black dark:text-white text-center dark:outline-white/5`}
     >
       <div className="container mx-auto">
         <div className="flex justify-between items-center p-4 gap-4 h-16">
           <div>
-            <Image src="file.svg" alt="Logo" width={40} height={40} />
+            <Link href="/">
+              <Image src="file.svg" alt="Logo" width={40} height={40} />
+            </Link>
           </div>
           <div className="max-md:hidden block">
             <NavigationMenuItems />
